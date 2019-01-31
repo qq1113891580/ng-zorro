@@ -1,3 +1,79 @@
-<p>
-  home works!
-</p>
+<nz-breadcrumb style="margin: 20px">
+  <nz-breadcrumb-item>
+    <i nz-icon type="home"></i>
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
+
+<nz-table #nestedTable [nzData]="JsonObj" [nzPageSize]="10">
+  <thead>
+    <tr>
+      <th nzShowExpand></th>
+      <th>省</th>
+      <th>省</th>
+      <th>省</th>
+      <th>省</th>
+      <th>省</th>
+      <th>省</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-data [ngForOf]="nestedTable.data">
+      <tr>
+        <td nzShowExpand [(nzExpand)]="data.expand"></td>
+        <td>{{data.name}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.name}}</td>
+        <td>
+          <a style="color: red">删除</a>
+        </td>
+      </tr>
+      <tr [nzExpand]="data.expand">
+        <td></td>
+        <td colspan="7">
+          <nz-table #innerTable [nzData]="data.city" nzSize="middle" [nzShowPagination]="false">
+            <thead>
+              <tr>
+                <th>市</th>
+                <th>市</th>
+                <th>市</th>
+                <th>状态</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+  <tbody>
+    <tr *ngFor="let data of data.city">
+      <td>{{data.name}}</td>
+      <td>{{data.name}}</td>
+      <td>
+        <nz-badge [nzStatus]="'success'" [nzText]="'已完成'"></nz-badge>
+      </td>
+      <td>{{data.name}}</td>
+      <td>
+        <span class="table-operation">
+          <nz-dropdown>
+            <a nz-dropdown class="operation">
+              操作 <i nz-icon type="down"></i>
+            </a>
+            <ul nz-menu>
+              <li nz-menu-item>
+                <a>编辑</a>
+              </li>
+              <li nz-menu-item>
+                <a>删除</a>
+              </li>
+            </ul>
+          </nz-dropdown>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+</td>
+</tr>
+</ng-template>
+</tbody>
+</nz-table>
