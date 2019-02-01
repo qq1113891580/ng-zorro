@@ -14,11 +14,12 @@ import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { Service } from 'src/services/service';
 import { RegionJson } from 'src/Json/Provinces';
+import { ButtonComponent } from './button/button.component';
 
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavMenuComponent],
+  declarations: [AppComponent, HomeComponent, NavMenuComponent, ButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

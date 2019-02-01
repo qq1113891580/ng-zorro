@@ -8,7 +8,7 @@
         <li nz-menu-group>
           <span title>Item 1</span>
           <ul>
-            <li nz-menu-item>Option 1</li>
+            <li nz-menu-item [routerLink]='["/button"]'>按钮</li>
             <li nz-menu-item>Option 2</li>
           </ul>
         </li>
@@ -37,6 +37,47 @@
     </li>
     <li nz-menu-item>
       <a href="https://ng.ant.design" target="_blank" rel="noopener noreferrer">ng-zorro首页</a>
+    </li>
+  </ul>
+
+  <!-- 侧边导航栏 -->
+  <ul nz-menu [nzMode]="'inline'" style="width: 240px;position: absolute;">
+    <li nz-submenu>
+      <span title><i nz-icon type="mail"></i>大概是首页</span>
+      <ul>
+        <li nz-menu-item>
+          <span title [routerLink]='["/"]'>表格</span>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu>
+      <span title><i nz-icon type="appstore"></i> Navigation Two</span>
+      <ul>
+        <li nz-menu-item>Option 5</li>
+        <li nz-menu-item>Option 6</li>
+        <li nz-submenu>
+          <span title>Submenu</span>
+          <ul>
+            <li nz-menu-item>Option 7</li>
+            <li nz-menu-item>Option 8</li>
+            <li nz-submenu>
+              <span title>Submenu</span>
+              <ul>
+                <li nz-menu-item>Option 9</li>
+                <li nz-menu-item>Option 10</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu>
+      <span title><i nz-icon type="setting"></i> Navigation Three</span>
+      <ul>
+        <li nz-menu-item>Option 11</li>
+        <li nz-menu-item>Option 12</li>
+        <li nz-menu-item>Option 13</li>
+      </ul>
     </li>
   </ul>
 </header>
