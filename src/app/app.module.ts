@@ -15,11 +15,13 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { Service } from 'src/services/service';
 import { RegionJson } from 'src/Json/Provinces';
 import { ButtonComponent } from './button/button.component';
+import { SliderComponent } from './slider/slider.component';
+import { ListKPComponent } from './list-kp/list-kp.component';
 
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavMenuComponent, ButtonComponent],
+  declarations: [AppComponent, HomeComponent, NavMenuComponent, ButtonComponent, SliderComponent, ListKPComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

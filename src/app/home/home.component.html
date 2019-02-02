@@ -4,6 +4,14 @@
   </nz-breadcrumb-item>
 </nz-breadcrumb>
 
+<nz-steps>
+  <nz-step nzTitle="Login" nzStatus="finish" nzIcon="user"></nz-step>
+  <nz-step nzTitle="Verification" nzStatus="finish" nzIcon="solution"></nz-step>
+  <nz-step nzTitle="Pay" nzStatus="process" nzIcon="loading"></nz-step>
+  <nz-step nzTitle="Done" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
+  <ng-template #iconTemplate><i nz-icon type="smile"></i></ng-template>
+</nz-steps>
+
 <nz-anchor style="position:absolute;right: 0">
   <nz-link nzHref="#home" nzTitle="面包屑"></nz-link>
   <nz-link nzHref="#kxiugai" nzTitle="可修改表格"></nz-link>
@@ -35,25 +43,13 @@
         <td>{{ data.name }}</td>
         <td>{{ data.name }}</td>
         <td>
-          <a
-            style="color: red"
-            nz-popconfirm
-            nzTitle="你想删除?"
-            (nzOnConfirm)="shanc(data)"
-            (nzOnCancel)="cancel()"
-            >删除</a
-          >
+          <a style="color: red" nz-popconfirm nzTitle="你想删除?" (nzOnConfirm)="shanc(data)" (nzOnCancel)="cancel()">删除</a>
         </td>
       </tr>
       <tr [nzExpand]="data.expand">
         <td></td>
         <td colspan="7">
-          <nz-table
-            #innerTable
-            [nzData]="data.city"
-            nzSize="middle"
-            [nzShowPagination]="false"
-          >
+          <nz-table #innerTable [nzData]="data.city" nzSize="middle" [nzShowPagination]="false">
             <thead>
               <tr>
                 <th>市</th>
@@ -63,41 +59,38 @@
                 <th>操作</th>
               </tr>
             </thead>
-            <tbody>
-              <tr *ngFor="let data of data.city">
-                <td>{{ data.name }}</td>
-                <td>{{ data.name }}</td>
-                <td>
-                  <nz-badge
-                    [nzStatus]="'success'"
-                    [nzText]="'已完成'"
-                  ></nz-badge>
-                </td>
-                <td>{{ data.name }}</td>
-                <td>
-                  <span class="table-operation">
-                    <nz-dropdown>
-                      <a nz-dropdown class="operation">
-                        操作 <i nz-icon type="down"></i>
-                      </a>
-                      <ul nz-menu>
-                        <li nz-menu-item><a (click)="createMessage('success')">编辑</a></li>
-                        <li nz-menu-item><a (click)="createMessage('error')">删除</a></li>
-                      </ul>
-                    </nz-dropdown>
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </nz-table>
-        </td>
-      </tr>
-    </ng-template>
+  <tbody>
+    <tr *ngFor="let data of data.city">
+      <td>{{ data.name }}</td>
+      <td>{{ data.name }}</td>
+      <td>
+        <nz-badge [nzStatus]="'success'" [nzText]="'已完成'"></nz-badge>
+      </td>
+      <td>{{ data.name }}</td>
+      <td>
+        <span class="table-operation">
+          <nz-dropdown>
+            <a nz-dropdown class="operation">
+              操作 <i nz-icon type="down"></i>
+            </a>
+            <ul nz-menu>
+              <li nz-menu-item><a (click)="createMessage('success')">编辑</a></li>
+              <li nz-menu-item><a (click)="createMessage('error')">删除</a></li>
+            </ul>
+          </nz-dropdown>
+        </span>
+      </td>
+    </tr>
   </tbody>
 </nz-table>
+</td>
+</tr>
+</ng-template>
+</tbody>
+</nz-table>
 
-<nz-table #editRowTable nzBordered [nzData]="dataSet">
-  <thead id="kxiugai">
+<nz-table #editRowTable nzBordered [nzData]="dataSet" id="kxiugai">
+  <thead>
     <tr>
       <th nzWidth="25%">Name</th>
       <th nzWidth="15%">Age</th>
@@ -114,11 +107,7 @@
               {{ data.name }}
             </ng-container>
             <ng-container *ngIf="editCache[data.key].edit">
-              <input
-                type="text"
-                nz-input
-                [(ngModel)]="editCache[data.key].data.name"
-              />
+              <input type="text" nz-input [(ngModel)]="editCache[data.key].data.name" />
             </ng-container>
           </div>
         </div>
@@ -128,11 +117,7 @@
           {{ data.age }}
         </ng-container>
         <ng-container *ngIf="editCache[data.key].edit">
-          <input
-            type="text"
-            nz-input
-            [(ngModel)]="editCache[data.key].data.age"
-          />
+          <input type="text" nz-input [(ngModel)]="editCache[data.key].data.age" />
         </ng-container>
       </td>
       <td>
@@ -140,25 +125,18 @@
           {{ data.address }}
         </ng-container>
         <ng-container *ngIf="editCache[data.key].edit">
-          <input
-            type="text"
-            nz-input
-            [(ngModel)]="editCache[data.key].data.address"
-          />
+          <input type="text" nz-input [(ngModel)]="editCache[data.key].data.address" />
         </ng-container>
       </td>
       <td>
         <div class="editable-row-operations">
           <ng-container *ngIf="!editCache[data.key].edit">
-            <a (click)="startEdit(data.key)">Edit</a>
+            <a (click)="startEdit(data.key)">编辑</a>
           </ng-container>
           <ng-container *ngIf="editCache[data.key].edit">
-            <a (click)="saveEdit(data.key)">Save</a>
-            <nz-popconfirm
-              [nzTitle]="'Sure to cancel?'"
-              (nzOnConfirm)="cancelEdit(data.key)"
-            >
-              <a nz-popconfirm>Cancel</a>
+            <a (click)="saveEdit(data.key)">修改</a>
+            <nz-popconfirm [nzTitle]="'Sure to cancel?'" (nzOnConfirm)="cancelEdit(data.key)" style="margin-left: 8px">
+              <a nz-popconfirm>取消</a>
             </nz-popconfirm>
           </ng-container>
         </div>
@@ -167,16 +145,9 @@
   </tbody>
 </nz-table>
 
-<nz-table
-  nzFooter="我是尾"
-  nzTitle="我是头"
-  #nzTable
-  nzBordered
-  [nzData]="JsonObj"
-  [nzPageSize]="50"
-  [nzScroll]="{ y: '240px' }"
->
-  <thead id="guidong">
+<nz-table nzFooter="我是尾" nzTitle="我是头" #nzTable nzBordered [nzData]="JsonObj" [nzPageSize]="50" [nzScroll]="{ y: '240px' }"
+  id="guidong">
+  <thead>
     <tr>
       <th nzWidth="150px">Name</th>
       <th nzWidth="150px">Age</th>

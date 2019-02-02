@@ -1,0 +1,46 @@
+滑动条
+<nz-row>
+  <nz-col nzSpan="12">
+    <nz-slider [nzMin]="1" [nzMax]="20" [(ngModel)]="value1"></nz-slider>
+  </nz-col>
+  <div nz-col nzSpan="4">
+    <nz-input-number [nzMin]="1" [nzMax]="20" [ngStyle]="{ 'marginLeft': '16px' }" [(ngModel)]="value1"></nz-input-number>
+  </div>
+</nz-row>
+
+<nz-row>
+  <nz-col nzSpan="12">
+    <nz-slider [nzMin]="0" [nzMax]="1" [nzStep]="0.01" [(ngModel)]="value2"></nz-slider>
+  </nz-col>
+  <nz-col nzSpan="4">
+    <nz-input-number [nzMin]="0" [nzMax]="1" [ngStyle]="{ marginLeft: '16px' }" [nzStep]="0.01" [(ngModel)]="value2"></nz-input-number>
+  </nz-col>
+</nz-row>
+
+<br>
+<div [ngStyle]="{ height: '300px' }">
+  <div [ngStyle]="style">
+    <nz-slider nzVertical [nzDefaultValue]="30"></nz-slider>
+  </div>
+  <div [ngStyle]="style">
+    <nz-slider nzVertical nzRange [nzStep]="10" [nzDefaultValue]="[20, 50]"></nz-slider>
+  </div>
+  <div [ngStyle]="style">
+    <nz-slider nzVertical nzRange [nzMarks]="marks" [nzDefaultValue]="[26, 37]"></nz-slider>
+  </div>
+</div>
+
+<br>
+<nz-switch [ngModel]="true" nzCheckedChildren="开" nzUnCheckedChildren="关"></nz-switch>
+<br>
+<nz-switch [ngModel]="false" nzCheckedChildren="1" nzUnCheckedChildren="0"></nz-switch>
+<br>
+<nz-switch [ngModel]="true" [nzCheckedChildren]="checkedTemplate" [nzUnCheckedChildren]="unCheckedTemplate"></nz-switch>
+<ng-template #checkedTemplate><i nz-icon type="check"></i></ng-template>
+<ng-template #unCheckedTemplate><i nz-icon type="close"></i></ng-template>
+
+<br>
+微标数
+<nz-badge nzDot><i nz-icon type="notification"></i></nz-badge>
+<nz-badge nzDot [nzShowDot]="false"><i nz-icon type="notification"></i></nz-badge>
+<nz-badge nzDot><a>Link something</a></nz-badge>
