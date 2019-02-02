@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-kp.component.scss']
 })
 export class ListKPComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  gridStyle = {
+    width: '25%',
+    textAlign: 'center'
+  };
+  dataSet = [];
+  constructor() {
+    for (let i = 0; i < 20; i++) {
+      this.dataSet.push({
+        key: i.toString(),
+        name: `名字 ${i}`,
+        age: 32,
+        address: `项目. ${i}`
+      });
+    }
   }
 
+  ngOnInit() {}
 }

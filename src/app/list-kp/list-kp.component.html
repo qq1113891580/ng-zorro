@@ -1,7 +1,44 @@
-卡片
 <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
-  <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+  <nz-card-meta nzTitle="欧美人" nzDescription="www.instagram.com"></nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
   <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
 </ng-template>
+
+<nz-card nzHoverable style="width:240px" [nzCover]="coverTemplat">
+  <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplat>
+  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+</ng-template>
+
+<nz-card nzHoverable style="width:240px" [nzCover]="coverTempla">
+  <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+</nz-card>
+<ng-template #coverTempla>
+  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+</ng-template>
+
+<nz-card style="width:300px;" [nzCover]="coverTempl" [nzActions]="[actionSetting,actionEdit,actionEllipsis]">
+  <nz-card-meta nzTitle="Card title" nzDescription="This is the description" [nzAvatar]="avatarTemplate"></nz-card-meta>
+</nz-card>
+<ng-template #avatarTemplate>
+  <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+</ng-template>
+<ng-template #coverTempl>
+  <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+</ng-template>
+<ng-template #actionSetting>
+  <i nz-icon type="setting"></i>
+</ng-template>
+<ng-template #actionEdit>
+  <i nz-icon type="edit"></i>
+</ng-template>
+<ng-template #actionEllipsis>
+  <i nz-icon type="ellipsis"></i>
+</ng-template>
+
+<br>
+<nz-card nzTitle="Cart Title">
+  <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let item of dataSet">{{item.name}}</div>
+</nz-card>
