@@ -1,3 +1,4 @@
+<p>按钮</p>
 <nz-radio-group [(ngModel)]="size">
   <label nz-radio-button nzValue="large">大</label>
   <label nz-radio-button nzValue="default">正常</label>
@@ -19,7 +20,7 @@
   <button nz-button nzType="primary">下一页<i nz-icon type="right"></i></button>
 </nz-button-group>
 <br>
-头像
+<p>头像</p>
 <nz-avatar nzIcon="user"></nz-avatar>
 <nz-avatar nzText="U"></nz-avatar>
 <nz-avatar nzText="USER"></nz-avatar>
@@ -30,9 +31,76 @@
 <br>
 <br>
 <br>
+<p>微表数</p>
 <nz-badge [nzCount]="99" style="margin-right: 24px;">
   <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
 </nz-badge>
 <nz-badge nzDot>
   <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
 </nz-badge>
+<p>搜索框</p>
+<nz-input-group [nzSuffix]="suffixIconSearch">
+  <input type="text" nz-input placeholder="input search text">
+</nz-input-group>
+<ng-template #suffixIconSearch>
+  <i nz-icon type="search"></i>
+</ng-template>
+<br>
+<br>
+<nz-input-group nzSearch [nzSuffix]="suffixIconButton">
+  <input type="text" nz-input placeholder="input search text">
+</nz-input-group>
+<ng-template #suffixIconButton>
+  <button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
+</ng-template>
+<br>
+<br>
+<nz-input-group nzSearch nzSize="large" [nzSuffix]="suffixButton">
+  <input type="text" nz-input placeholder="input search text">
+</nz-input-group>
+<ng-template #suffixButton>
+  <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+</ng-template>
+<br>
+<br>
+<br>
+<div style="margin-bottom: 16px;">
+  <nz-input-group nzAddOnBefore="Http://" nzAddOnAfter=".com">
+    <input type="text" nz-input [(ngModel)]="inputValue">
+  </nz-input-group>
+</div>
+<div style="margin-bottom: 16px;">
+  <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+    <input type="text" nz-input [(ngModel)]="inputValue">
+  </nz-input-group>
+  <ng-template #addOnBeforeTemplate>
+    <nz-select [ngModel]="'Http://'">
+      <nz-option [nzLabel]="'Http://'" [nzValue]="'Http://'"></nz-option>
+      <nz-option [nzLabel]="'Https://'" [nzValue]="'Https://'"></nz-option>
+    </nz-select>
+  </ng-template>
+  <ng-template #addOnAfterTemplate>
+    <nz-select [ngModel]="'.com'">
+      <nz-option [nzLabel]="'.com'" [nzValue]="'.com'"></nz-option>
+      <nz-option [nzLabel]="'.jp'" [nzValue]="'.jp'"></nz-option>
+      <nz-option [nzLabel]="'.cn'" [nzValue]="'.cn'"></nz-option>
+      <nz-option [nzLabel]="'.org'" [nzValue]="'.org'"></nz-option>
+    </nz-select>
+  </ng-template>
+</div>
+<div style="margin-bottom: 16px;">
+  <nz-input-group [nzAddOnAfter]="addOnAfterIconTemplate">
+    <input type="text" nz-input [(ngModel)]="inputValue">
+  </nz-input-group>
+  <ng-template #addOnAfterIconTemplate>
+    <i nz-icon type="setting"></i>
+  </ng-template>
+</div>
+<br>
+<br>
+<p>切换</p>
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let index of array">
+    <h3>{{index}}</h3>
+  </div>
+</nz-carousel>

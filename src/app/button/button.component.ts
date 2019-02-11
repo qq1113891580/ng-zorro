@@ -8,10 +8,11 @@ import { NzNotificationService } from 'ng-zorro-antd';
 })
 export class ButtonComponent implements OnInit {
   size = 'large';
+  inputValue = 'my wang';
+  array = [1, 2, 3, 4];
+  constructor(public notification: NzNotificationService) { }
 
-  constructor(public notification: NzNotificationService) {}
-
-  ngOnInit() {}
+  ngOnInit() { }
 
   ban() {
     this.notification.create(

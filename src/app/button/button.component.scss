@@ -1,12 +1,25 @@
 [nz-button] {
-  margin-right: 8px;
-  margin-bottom: 12px;
+    margin-right: 8px;
+    margin-bottom: 12px;
 }
 
 nz-button-group [nz-button] {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 nz-radio-group {
-  margin-bottom: 12px
+    margin-bottom: 12px
+}
+
+[nz-carousel-content] {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+}
+
+h3 {
+    color: #fff;
 }
