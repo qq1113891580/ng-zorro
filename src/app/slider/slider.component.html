@@ -40,11 +40,6 @@
 <ng-template #checkedTemplate><i nz-icon type="check"></i></ng-template>
 <ng-template #unCheckedTemplate><i nz-icon type="close"></i></ng-template>
 
-<br>
-<p>微标数</p>
-<nz-badge nzDot><i nz-icon type="notification"></i></nz-badge>
-<nz-badge nzDot [nzShowDot]="false"><i nz-icon type="notification"></i></nz-badge>
-<nz-badge nzDot><a>Link something</a></nz-badge>
 <p>穿梭框</p>
 <nz-transfer [nzDataSource]="list" [nzDisabled]="disabled" [nzTitles]="['左边', '右边']" (nzSelectChange)="select($event)"
   (nzChange)="change($event)">

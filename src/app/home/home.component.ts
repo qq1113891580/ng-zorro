@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     this.notification.create(
       'info',
       '你有个特别的提示',
-      '你居然删了 一条数据!是不是很特别XD？'
+      '你删了一条数据'
     );
     // const index = this.JsonObj.indexOf(d);
     // if (index > -1) {
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   }
 
   cancel() {
-    this.nzMessageService.info('你选的是取消，请选择旁边的确定，谢谢');
+    this.nzMessageService.info('你选的是取消');
   }
 
   startEdit(key: string): void {

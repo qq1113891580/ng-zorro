@@ -31,13 +31,16 @@
 <br>
 <br>
 <br>
-<p>微表数</p>
+<p>微标数</p>
 <nz-badge [nzCount]="99" style="margin-right: 24px;">
   <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
 </nz-badge>
 <nz-badge nzDot>
   <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
 </nz-badge>
+<nz-badge nzDot><i nz-icon type="notification"></i></nz-badge>
+<nz-badge nzDot [nzShowDot]="false"><i nz-icon type="notification"></i></nz-badge>
+<nz-badge nzDot><a>Link something</a></nz-badge>
 <p>评分</p>
 <nz-rate [ngModel]="0" nzAllowHalf [nzCharacter]="characterIcon"></nz-rate>
 <br>
