@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -17,18 +17,28 @@ import { RegionJson } from 'src/Json/Provinces';
 import { ButtonComponent } from './button/button.component';
 import { SliderComponent } from './slider/slider.component';
 import { ListKPComponent } from './list-kp/list-kp.component';
+import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
 
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavMenuComponent, ButtonComponent, SliderComponent, ListKPComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavMenuComponent,
+    ButtonComponent,
+    SliderComponent,
+    ListKPComponent,
+    TabsAndOtherComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [Service, RegionJson, { provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

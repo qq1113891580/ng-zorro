@@ -45,3 +45,18 @@
 <nz-badge nzDot><i nz-icon type="notification"></i></nz-badge>
 <nz-badge nzDot [nzShowDot]="false"><i nz-icon type="notification"></i></nz-badge>
 <nz-badge nzDot><a>Link something</a></nz-badge>
+<p>穿梭框</p>
+<nz-transfer [nzDataSource]="list" [nzDisabled]="disabled" [nzTitles]="['左边', '右边']" (nzSelectChange)="select($event)"
+  (nzChange)="change($event)">
+</nz-transfer>
+<div style="margin-top: 8px;">
+  <nz-switch [(ngModel)]="disabled" nzCheckedChildren="disabled" nzUnCheckedChildren="disabled"></nz-switch>
+  <div>
+    <p>多选框</p>
+    <div style="border-bottom: 1px solid rgb(233, 233, 233);">
+      <label nz-checkbox [(ngModel)]="allChecked" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate">
+        Check all
+      </label>
+    </div>
+    <br>
+    <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>

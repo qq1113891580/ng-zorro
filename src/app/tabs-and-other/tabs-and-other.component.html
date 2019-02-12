@@ -1,0 +1,114 @@
+<nz-tabset>
+  <nz-tab nzTitle="表单">
+    <form nz-form [formGroup]="myForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>培训名称</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <input
+            nz-input
+            id="Name"
+            formControlName="Name"
+            placeholder="培训名称"
+          />
+          <nz-form-explain
+            *ngIf="myForm.get('Name').dirty && myForm.get('Name').errors"
+            >培训名称不可为空</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>培训员</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <input
+            nz-input
+            id="Trainer"
+            formControlName="Trainer"
+            placeholder="培训员"
+          />
+          <nz-form-explain
+            *ngIf="myForm.get('Trainer').dirty && myForm.get('Trainer').errors"
+            >培训员不可为空</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>开始时间</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-date-picker
+            style="border-color: red"
+            formControlName="TrainTime"
+          ></nz-date-picker>
+          <nz-form-explain
+            *ngIf="
+              myForm.get('TrainTime').dirty && myForm.get('TrainTime').errors
+            "
+            >开始时间不可为空</nz-form-explain
+          >
+          <nz-form-explain
+            *ngIf="myForm.value.TrainTime > myForm.value.EndTime"
+            style="color: red"
+            >开始时间不能大于结束时间！</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>结束时间</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-date-picker formControlName="EndTime"></nz-date-picker>
+          <nz-form-explain
+            *ngIf="myForm.get('EndTime').dirty && myForm.get('EndTime').errors"
+            >结束时间不可为空</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7">培训内容</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <textarea
+            formControlName="Content"
+            nz-input
+            rows="2"
+            placeholder="培训内容"
+          ></textarea>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>培训地点</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <input
+            nz-input
+            id="Address"
+            formControlName="Address"
+            placeholder="培训地点"
+          />
+          <nz-form-explain
+            *ngIf="myForm.get('Address').dirty && myForm.get('Address').errors"
+            >培训地点不可为空</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-tab>
+  <nz-tab nzTitle="树状图">
+      <nz-tree
+      #treeCom
+      [nzData]="nodes"
+      nzCheckable="true"
+      nzMultiple="true"
+      [nzCheckedKeys]="defaultCheckedKeys"
+      [nzExpandedKeys]="defaultExpandedKeys"
+      [nzSelectedKeys]="defaultSelectedKeys"
+      (nzClick)="nzClick($event)"
+      (nzSelectedKeysChange)="nzSelect($event)"
+      (nzCheckBoxChange)="nzCheck($event)">
+    </nz-tree>
+  </nz-tab>
+  <nz-tab nzTitle="Tab 3">
+    Content of Tab Pane 3
+  </nz-tab>
+</nz-tabset>
