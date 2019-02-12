@@ -19,6 +19,7 @@ import { SliderComponent } from './slider/slider.component';
 import { ListKPComponent } from './list-kp/list-kp.component';
 import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
 import { ListComponent } from './list/list.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 registerLocaleData(zh);
 
@@ -31,7 +32,8 @@ registerLocaleData(zh);
     SliderComponent,
     ListKPComponent,
     TabsAndOtherComponent,
-    ListComponent
+    ListComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
