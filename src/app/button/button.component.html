@@ -38,6 +38,15 @@
 <nz-badge nzDot>
   <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
 </nz-badge>
+<p>评分</p>
+<nz-rate [ngModel]="0" nzAllowHalf [nzCharacter]="characterIcon"></nz-rate>
+<br>
+<nz-rate [ngModel]="0" nzAllowHalf class="large" [nzCharacter]="characterEnLetter"></nz-rate>
+<br>
+<nz-rate [ngModel]="0" nzAllowHalf [nzCharacter]="characterZhLetter"></nz-rate>
+<ng-template #characterIcon><i nz-icon type="heart"></i></ng-template>
+<ng-template #characterZhLetter>好</ng-template>
+<ng-template #characterEnLetter>A</ng-template>
 <p>搜索框</p>
 <nz-input-group [nzSuffix]="suffixIconSearch">
   <input type="text" nz-input placeholder="input search text">

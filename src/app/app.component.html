@@ -20,15 +20,15 @@
             <ul>
               <li nz-menu-item [routerLink]='["/button"]'>按钮和头像</li>
               <li nz-menu-item [routerLink]='["/slider"]'>滑动条和微标树</li>
-              <li nz-submenu>
+              <li nz-submenu [nzOpen]='true'>
                 <span title>分类2</span>
                 <ul>
-                  <li nz-menu-item [routerLink]='["/list"]'>列表和卡片</li>
+                  <li nz-menu-item [routerLink]='["/KP"]'>卡片</li>
                   <li nz-menu-item [routerLink]='["/tabsAO"]'>tabs页及其它</li>
-                  <li nz-submenu>
-                    <span title>Submenu</span>
+                  <li nz-submenu [nzOpen]='true'>
+                    <span title>分类3</span>
                     <ul>
-                      <li nz-menu-item>Option 9</li>
+                      <li nz-menu-item [routerLink]='["/list"]'>列表</li>
                       <li nz-menu-item>Option 10</li>
                     </ul>
                   </li>

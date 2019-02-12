@@ -5,6 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { SliderComponent } from './slider/slider.component';
 import { ListKPComponent } from './list-kp/list-kp.component';
 import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [];
 
@@ -14,8 +15,9 @@ const routes: Routes = [];
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'button', component: ButtonComponent },
       { path: 'slider', component: SliderComponent },
-      { path: 'list', component: ListKPComponent },
-      { path: 'tabsAO', component: TabsAndOtherComponent }
+      { path: 'KP', component: ListKPComponent },
+      { path: 'tabsAO', component: TabsAndOtherComponent },
+      { path: 'list', component: ListComponent }
     ])
   ],
   exports: [RouterModule]

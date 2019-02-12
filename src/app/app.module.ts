@@ -18,6 +18,7 @@ import { ButtonComponent } from './button/button.component';
 import { SliderComponent } from './slider/slider.component';
 import { ListKPComponent } from './list-kp/list-kp.component';
 import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
+import { ListComponent } from './list/list.component';
 
 registerLocaleData(zh);
 
@@ -29,7 +30,8 @@ registerLocaleData(zh);
     ButtonComponent,
     SliderComponent,
     ListKPComponent,
-    TabsAndOtherComponent
+    TabsAndOtherComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
