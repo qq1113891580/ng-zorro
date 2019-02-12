@@ -10,6 +10,7 @@ import { NzTreeNodeOptions, NzFormatEmitEvent } from 'ng-zorro-antd';
 export class TabsAndOtherComponent implements OnInit {
   @ViewChild('treeCom') treeCom;
   myForm: FormGroup;
+  visible = false;
   defaultCheckedKeys = ['1001', '1002'];
   defaultSelectedKeys = ['10011'];
   defaultExpandedKeys = ['100', '1001'];
@@ -52,6 +53,14 @@ export class TabsAndOtherComponent implements OnInit {
         this.treeCom.getSelectedNodeList()
       );
     }, 500);
+  }
+
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
   }
 
   nzClick(event: NzFormatEmitEvent): void {
