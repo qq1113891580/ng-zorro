@@ -16,15 +16,15 @@
             </ul>
           </li>
           <li nz-submenu [nzOpen]='true'>
-            <span title><i nz-icon type="appstore"></i> Navigation Two</span>
+            <span title><i nz-icon type="appstore"></i>分类1</span>
             <ul>
-              <li nz-menu-item>Option 5</li>
-              <li nz-menu-item>Option 6</li>
+              <li nz-menu-item [routerLink]='["/button"]'>按钮和头像</li>
+              <li nz-menu-item [routerLink]='["/slider"]'>滑动条和微标树</li>
               <li nz-submenu>
-                <span title>Submenu</span>
+                <span title>分类2</span>
                 <ul>
-                  <li nz-menu-item>Option 7</li>
-                  <li nz-menu-item>Option 8</li>
+                  <li nz-menu-item [routerLink]='["/list"]'>列表和卡片</li>
+                  <li nz-menu-item [routerLink]='["/tabsAO"]'>tabs页及其它</li>
                   <li nz-submenu>
                     <span title>Submenu</span>
                     <ul>
