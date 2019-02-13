@@ -20,6 +20,7 @@ import { ListKPComponent } from './list-kp/list-kp.component';
 import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
 import { ListComponent } from './list/list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArticleStepsComponent } from './article-steps/article-steps.component';
 
 registerLocaleData(zh);
 
@@ -33,7 +34,8 @@ registerLocaleData(zh);
     ListKPComponent,
     TabsAndOtherComponent,
     ListComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArticleStepsComponent
   ],
   imports: [
     BrowserModule,

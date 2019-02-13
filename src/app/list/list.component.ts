@@ -14,7 +14,13 @@ export class ListComponent implements OnInit {
     '优美的诗句 5'
   ];
 
+  reverse = false;
+
   constructor() {}
 
   ngOnInit() {}
+
+  toggleReverse(): void {
+    this.reverse = !this.reverse;
+  }
 }

@@ -1,5 +1,5 @@
 <!-- 侧边导航栏 -->
-<ul nz-menu [nzMode]="'inline'" style="width: 100%;" [nzTheme]="'dark'">
+<ul nz-menu [nzMode]="'inline'" style="width: 100%;min-height: 100vh;" [nzTheme]="'dark'">
   <li nz-submenu [nzOpen]='true'>
     <span title><i nz-icon type="mail"></i>首页</span>
     <ul>
@@ -22,7 +22,7 @@
             <span title>分类3</span>
             <ul>
               <li nz-menu-item [routerLink]='["/list"]'>列表</li>
-              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item [routerLink]='["/articleSteps"]'>进度条</li>
             </ul>
           </li>
         </ul>

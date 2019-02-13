@@ -6,6 +6,7 @@ import { SliderComponent } from './slider/slider.component';
 import { ListKPComponent } from './list-kp/list-kp.component';
 import { TabsAndOtherComponent } from './tabs-and-other/tabs-and-other.component';
 import { ListComponent } from './list/list.component';
+import { ArticleStepsComponent } from './article-steps/article-steps.component';
 
 const routes: Routes = [];
 
@@ -17,7 +18,8 @@ const routes: Routes = [];
       { path: 'slider', component: SliderComponent },
       { path: 'KP', component: ListKPComponent },
       { path: 'tabsAO', component: TabsAndOtherComponent },
-      { path: 'list', component: ListComponent }
+      { path: 'list', component: ListComponent },
+      { path: 'articleSteps', component: ArticleStepsComponent }
     ])
   ],
   exports: [RouterModule]

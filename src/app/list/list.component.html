@@ -1,18 +1,24 @@
-<h3 [ngStyle]="{'margin-bottom.px': 16 }">间隔大</h3>
-  <nz-list [nzDataSource]="data" nzBordered
-           [nzHeader]="'头'" [nzFooter]="'尾'"
-           [nzRenderItem]="item">
-    <ng-template #item let-item><nz-list-item [nzContent]="item"></nz-list-item></ng-template>
-  </nz-list>
-  <h3 [ngStyle]="{'margin': '16px 0' }">间隔中</h3>
-  <nz-list [nzDataSource]="data" nzBordered nzSize="small"
-           [nzHeader]="'Header'" [nzFooter]="'Footer'"
-           [nzRenderItem]="item">
-    <ng-template #item let-item><nz-list-item [nzContent]="item"></nz-list-item></ng-template>
-  </nz-list>
-  <h3 [ngStyle]="{'margin': '16px 0' }">间隔小</h3>
-  <nz-list [nzDataSource]="data" nzBordered nzSize="large"
-           [nzHeader]="'Header'" [nzFooter]="'Footer'"
-           [nzRenderItem]="item">
-    <ng-template #item let-item><nz-list-item [nzContent]="item"></nz-list-item></ng-template>
-  </nz-list>
+<nz-timeline [nzPending]="'Recording...'" [nzReverse]="reverse">
+  <nz-timeline-item>Create a services site 2015-09-01</nz-timeline-item>
+  <nz-timeline-item>Solve initial network problems 2015-09-01</nz-timeline-item>
+  <nz-timeline-item>Technical testing 2015-09-01</nz-timeline-item>
+</nz-timeline>
+<button nz-button style="margin-top: 16px" nzType="primary" (click)="toggleReverse()">Toggle Reverse</button>
+<nz-divider nzText="左 间隔大" nzOrientation="left"></nz-divider>
+<nz-list [nzDataSource]="data" nzBordered [nzHeader]="'头'" [nzFooter]="'尾'" [nzRenderItem]="item">
+  <ng-template #item let-item>
+    <nz-list-item [nzContent]="item"></nz-list-item>
+  </ng-template>
+</nz-list>
+<nz-divider nzText="右 间隔中" nzOrientation="right"></nz-divider>
+<nz-list [nzDataSource]="data" nzBordered nzSize="small" [nzHeader]="'Header'" [nzFooter]="'Footer'" [nzRenderItem]="item">
+  <ng-template #item let-item>
+    <nz-list-item [nzContent]="item"></nz-list-item>
+  </ng-template>
+</nz-list>
+<nz-divider nzText="中 间隔小"></nz-divider>
+<nz-list [nzDataSource]="data" nzBordered nzSize="large" [nzHeader]="'Header'" [nzFooter]="'Footer'" [nzRenderItem]="item">
+  <ng-template #item let-item>
+    <nz-list-item [nzContent]="item"></nz-list-item>
+  </ng-template>
+</nz-list>
